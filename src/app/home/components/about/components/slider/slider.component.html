@@ -1,0 +1,7 @@
+<swiper-container class="mySwiper" scrollbar-hide="true" effect="fade" navigation #swiper init="false">
+    @for (item of images; track $index) {
+    <swiper-slide>
+        <img [src]="item.src" alt="image">
+    </swiper-slide>
+    }
+</swiper-container>

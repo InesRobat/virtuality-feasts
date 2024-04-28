@@ -1,0 +1,28 @@
+@import './styles/utils';
+
+:host {
+  @include flex(center, center, column);
+  border: 1px solid $border;
+  border-radius: 16px;
+  max-width: 100vh;
+  height: get-vh(380px);
+}
+
+.text {
+  @include flex(space-between, center, column);
+  padding: 5%;
+  box-sizing: border-box;
+  color: $main-color;
+  gap: 50px;
+  height: 100%;
+
+  &__title {
+    font-size: em(32);
+    text-transform: uppercase;
+  }
+
+  &__sub {
+    font-size: em(12);
+    line-height: 1.5em;
+  }
+}

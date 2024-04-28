@@ -1,0 +1,12 @@
+<!-- <div class="about"> -->
+<app-item [element]="topItem" />
+
+<div class="stats">
+    @for (item of statsArray; track $index) {
+    <app-stats [element]="item" />
+    }
+</div>
+
+
+<app-item class="reverse" [element]="bottomItem" />
+<!-- </div> -->

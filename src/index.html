@@ -1,13 +1,31 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
-  <title>VirtualityFeast</title>
+  <title>VirtualityFeasts</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
+
 <body>
+  <form name="connectForm" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <input type="hidden" name="form-name" value="connectForm">
+    <p>
+      <label>Name <input type="text" name="name" /></label>
+    </p>
+    <p>
+      <label>Email <input type="email" name="email" /></label>
+    </p>
+    <p>
+      <label>Message <textarea name="message"></textarea></label>
+    </p>
+    <p>
+      <button type="submit">Reserve your journey Today !</button>
+    </p>
+  </form>
   <app-root></app-root>
 </body>
+
 </html>

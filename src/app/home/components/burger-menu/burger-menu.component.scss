@@ -1,0 +1,56 @@
+@import './styles/utils';
+
+:host {
+  @include flex(center, center, column);
+  background-color: $bg-nav;
+  color: $main-color;
+  width: 100vw;
+  height: 100vh;
+  padding: 24px;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.burger-menu {
+  @include flex(center, center, column);
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  border: 1px solid $grey;
+  background-color: $light-black;
+  padding: 5%;
+  box-sizing: border-box;
+  position: relative;
+
+  &__close {
+    @include flex(center, center, column);
+    position: absolute;
+    top: get-vh(20px);
+    left: get-vh(20px);
+    border-radius: 8px;
+    border: 1px solid $grey;
+    background-color: $light-black;
+    width: get-vh(40px);
+    height: get-vh(40px);
+
+    img {
+      transform: rotate(45deg);
+    }
+  }
+
+  &__item {
+    font-size: em(64);
+    text-transform: uppercase;
+
+    @media (max-width: 809px) {
+      font-size: em(48);
+    }
+
+    &:hover,
+    &.active,
+    &.focus {
+      color: $gold;
+      cursor: pointer;
+    }
+  }
+}

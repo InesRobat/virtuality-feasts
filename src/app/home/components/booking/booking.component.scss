@@ -1,0 +1,88 @@
+@import './styles/utils';
+
+:host {
+  @include flex(flex-start, center, column);
+  // width: get-vh(928px);
+  height: 92vh;
+  border: 1px solid $border;
+  border-radius: 16px;
+  padding: 5% 10%;
+  box-sizing: border-box;
+  gap: 65px;
+  position: relative;
+  color: $main-color;
+}
+
+.subject {
+  text-align: center;
+  font-size: em(18);
+}
+
+form {
+  @include flex(center, center, column);
+  width: 35vw;
+  // height: 60%;
+
+  @media only screen and (max-width: 768px) {
+    width: 90vw;
+  }
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+button {
+  box-shadow: transparent 0px 0px 0px 1px inset;
+  box-sizing: border-box;
+  color: $main-color;
+  border-radius: 8px;
+  background-color: rgb(18, 18, 18, .5);
+  border: 1px solid rgb(239, 231, 210, .15);
+  font-size: em(16);
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: get-vh(15px) get-vh(20px);
+  margin: get-vh(8px) 0 0 0;
+}
+
+textarea {
+  width: 100%;
+  height: get-vh(150px);
+  padding: get-vh(15px) get-vh(20px);
+  resize: none;
+  margin: get-vh(8px) 0 get-vh(20px) 0;
+}
+
+button {
+  cursor: pointer;
+  display: inline-block;
+  font-size: em(12);
+  line-height: 1em;
+  outline: none;
+  padding: get-vh(15px) 2%;
+  box-sizing: border-box;
+  transition: all 235ms ease-in-out;
+  touch-action: manipulation;
+  width: 100%;
+  background-color: $main-color;
+  color: $bg-nav;
+}
+
+button:hover {
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8spx 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+button:focus {
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;
+}
+
+app-panel-title {
+  ::ng-deep .content__title {
+    font-size: em(40);
+    width: 42%;
+  }
+}

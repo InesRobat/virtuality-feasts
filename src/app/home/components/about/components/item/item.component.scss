@@ -1,0 +1,10 @@
+@import './styles/utils';
+
+:host {
+  @include flex(center, center, row);
+  gap: 16px;
+
+  @media (max-width: 809px) {
+    flex-direction: column;
+  }
+}

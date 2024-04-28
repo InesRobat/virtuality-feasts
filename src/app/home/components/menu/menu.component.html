@@ -1,0 +1,35 @@
+<div class="content">
+    @for (item of legend; track $index) {
+    <div class="content__legend" (click)="goTo($index)">{{item}}</div>
+    }
+</div>
+
+@for (item of menu; track $index) {
+<div class="menu">
+    <div class="menu__content" appScrollToItem [id]="$index" [value]="$index">
+        <span></span>
+        <div class="menu__content__title">{{item.title}}</div>
+        <span></span>
+    </div>
+
+    @for (sub of item.submenu; track $index) {
+    <div class="menu__info">
+        <img [src]="sub.src" alt="image" draggable="false">
+        <div class="menu__info__detail">
+            <div class="menu__info__detail__subtitle">
+                <div>{{sub.subtitle}}</div>
+                <span></span>
+                <div>{{sub.price}}</div>
+            </div>
+            <div class="menu__info__detail__description">{{sub.description}}</div>
+        </div>
+    </div>
+    }
+</div>
+}
+
+@if ((scrollPosition$ | async) === 0) {
+<div class="button-down" (click)="scrollBack()"></div>
+} @else {
+<div class="button-up" (click)="scrollBack()"></div>
+}

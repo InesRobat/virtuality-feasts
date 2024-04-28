@@ -1,0 +1,37 @@
+<div class="wrap">
+    <div class="opening border">
+        <app-panel-title [title]="'Opening Hours'" />
+
+        @for (item of hours; track $index) {
+        <div class="info">
+            <div class="info__label">{{item.label}}</div>
+            <div class="info__detail">{{item.detail}}</div>
+        </div>
+        }
+    </div>
+
+    <div class="photos">
+        @for (item of photos; track $index) {
+        <div class="photos__photo">
+            <img [src]="item.src" alt="photo" draggable="false">
+        </div>
+        }
+    </div>
+</div>
+
+<div class="wrap">
+    <div class="map">
+        <img [src]="'./assets/images/pexels-photo-697662.jpeg'" alt="map">
+    </div>
+
+    <div class="address border">
+        <app-panel-title [title]="'Get in Touch'" />
+
+        @for (item of infos; track $index) {
+        <div class="info">
+            <div class="info__label">{{item.label}}</div>
+            <div class="info__detail">{{item.detail}}</div>
+        </div>
+        }
+    </div>
+</div>

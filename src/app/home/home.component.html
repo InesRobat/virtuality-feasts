@@ -1,0 +1,9 @@
+<app-image [src]="src" [title]="title" />
+
+<div class="router" (scroll)="onScroll($event)" #router>
+    <router-outlet (activate)="onOutletLoaded($event)"></router-outlet>
+
+    @if (state !== 'list') {
+    <app-footer />
+    }
+</div>

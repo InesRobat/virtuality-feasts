@@ -1,0 +1,41 @@
+@import './styles/utils';
+
+:host {
+  width: 100%;
+  font-family: "Quicksand", sans-serif;
+}
+
+.content {
+  @include flex(center, center, row);
+  width: 100%;
+
+  span {
+    font-size: em(32);
+    width: get-vh(8px);
+    height: get-vh(8px);
+    border: 1px solid $grey;
+    transform: rotate(45deg);
+    margin: get-vh(1px);
+  }
+
+  &__title {
+    @include flex(center, center, row);
+    text-transform: uppercase;
+    font-size: em(24);
+    text-align: center;
+
+    &::before,
+    &::after {
+      content: '';
+      width: 10%;
+      height: 1px;
+      background-color: $grey;
+    }
+
+    &::before,
+    &::after {
+      @include flex(center, center, row);
+      gap: 10px;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+@import './styles/utils';
+
+:host {
+  @include flex(space-evenly, center, row);
+  width: 100vw;
+  height: 100vh;
+  padding: 1%;
+  box-sizing: border-box;
+  gap: 15px;
+  // background-color: $bg-nav;
+
+  @media (min-width: 810px) and (max-width: 1199px) {
+    flex-direction: column;
+    overflow: auto;
+    scroll-behavior: smooth;
+    padding: 3%;
+    height: 100%;
+  }
+
+  @media (max-width: 809px) {
+    padding: 3%;
+    flex-direction: column;
+    overflow: auto;
+    scroll-behavior: smooth;
+    height: initial;
+  }
+}
+
+.router {
+  @include flex(flex-start, center, column);
+  width: auto;
+  height: 100%;
+  overflow: auto;
+  scroll-behavior: smooth;
+
+  @media (min-width: 810px) and (max-width: 1199px),
+  (max-width: 809px) {
+    width: 100%;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

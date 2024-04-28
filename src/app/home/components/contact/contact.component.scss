@@ -1,0 +1,96 @@
+@import './styles/utils';
+
+:host {
+  @include flex(center, center, column);
+  height: auto;
+  gap: 16px;
+  color: $main-color;
+
+  @media (min-width: 810px) and (max-width: 1199px),
+  (max-width: 809px) {
+    width: 100%;
+  }
+}
+
+.wrap {
+  @include flex(center, center, row);
+  width: 100%;
+  gap: 16px;
+
+  @media (max-width: 809px) {
+    flex-direction: column;
+  }
+}
+
+.map {
+  width: get-vh(446px);
+  height: 100%;
+
+  @media (max-width: 809px) {
+    width: 100%;
+  }
+
+  img {
+    border-radius: 16px;
+    @include img(100%, 100%, cover, center);
+  }
+}
+
+.info {
+  @include flex(space-between, center, row);
+  width: 100%;
+  gap: 15px;
+
+  &__label {
+    font-size: em(14);
+    text-transform: uppercase;
+  }
+
+  &__detail {
+    font-size: em(10);
+    text-align: end;
+  }
+}
+
+.photos {
+  @include flex(center, center, row);
+  flex-wrap: wrap;
+  // width: get-vh(446px);
+  // height: get-vh(468px);
+  gap: 16px;
+
+  @media (max-width: 809px) {
+    width: 100%;
+  }
+
+  &__photo {
+    width: 47%;
+    height: get-vh(220px);
+
+    @media (max-width: 809px) {
+      width: 48%;
+    }
+
+    img {
+      border-radius: 16px;
+      @include img(100%, 100%, cover, bottom);
+    }
+  }
+}
+
+.border {
+  @include flex(space-around, flex-start, column);
+  // width: get-vh(446px);
+  height: get-vh(455px);
+  border: 1px solid $border;
+  border-radius: 16px;
+  padding: 1% 4%;
+  box-sizing: border-box;
+  gap: 10px;
+  flex-grow: 1;
+  font-size: em(12);
+
+  @media (max-width: 809px) {
+    width: 100%;
+  }
+}

@@ -1,0 +1,32 @@
+@import './styles/utils';
+
+:host {
+  @include flex(flex-start, center, column);
+  // width: get-vh(928px);
+  height: 92vh;
+  color: $main-color;
+  gap: 16px;
+
+  @media (max-width: 809px) {
+    height: inherit;
+  }
+}
+
+.stats {
+  @include flex(center, center, row);
+  gap: 10px;
+  width: 100%;
+  flex-grow: 1;
+
+  @media (max-width: 809px) {
+    flex-direction: column;
+  }
+}
+
+.reverse {
+  @include flex(center, center, row-reverse);
+
+  @media (max-width: 809px) {
+    flex-direction: column-reverse;
+  }
+}

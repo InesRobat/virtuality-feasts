@@ -1,0 +1,36 @@
+@use 'sass:math';
+
+$base-width: 1920;
+$base-height: 1080;
+
+@function get-vw($target) {
+  $vw-context: (
+    $base-width * .01) * 1px;
+  @return math.div($target, $vw-context) * 1vw;
+}
+
+@function get-vh($target) {
+  $vw-context: (
+    $base-height * .01) * 1px;
+  @return math.div($target, $vw-context) * 1vh;
+}
+
+$browser-context: 16;
+
+@function em($pixels, $context: $browser-context) {
+  @return ($pixels / $context) * 1em;
+}
+
+@mixin flex($justify: initial, $align-items: initial, $direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align-items;
+}
+
+@mixin img($width: 100%, $height: 100%, $object-fit: contain, $object-position: center) {
+  width: $width;
+  height: $height;
+  object-fit: $object-fit;
+  object-position: $object-position;
+}

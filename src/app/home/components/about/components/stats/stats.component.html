@@ -1,0 +1,11 @@
+@if (element) {
+<div class="content">
+    <div class="content__icon">
+        @for (item of starArray; track $index) {
+        <img [src]="'./assets/images/star.svg'" alt="picto-star">
+        }
+    </div>
+    <div class="content__title">{{element.title}}</div>
+    <div class="content__subtitle">{{element.subtitle}}</div>
+</div>
+}

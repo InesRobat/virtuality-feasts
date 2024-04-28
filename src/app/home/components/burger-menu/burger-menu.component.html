@@ -1,0 +1,15 @@
+<div class="burger-menu">
+    <div class="burger-menu__close" (click)="close()">
+        <img [src]="'./assets/images/close.svg'" alt="picto_close">
+    </div>
+
+    <img [src]="'./assets/images/icon-line.svg'" alt="icon" draggable="false">
+
+    @for (item of burgerMenuLit; track $index) {
+    <div class="burger-menu__item" (click)="onBurgerMenuItemClick(item.label)">
+        <span>{{ item.label }}</span>
+    </div>
+    }
+
+    <img [src]="'./assets/images/icon-line.svg'" alt="icon" draggable="false">
+</div>
