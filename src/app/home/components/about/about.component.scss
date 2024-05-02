@@ -1,6 +1,7 @@
 @import './styles/utils';
 
-:host {
+:host,
+.about {
   @include flex(flex-start, center, column);
   // width: get-vh(928px);
   height: 92vh;

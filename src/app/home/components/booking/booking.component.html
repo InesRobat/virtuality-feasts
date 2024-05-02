@@ -1,15 +1,17 @@
-<app-panel-title [title]="'Reservation'" />
+<div class="booking" @slideInOut>
+    <app-panel-title [title]="'Reservation'" />
 
-<div class="subject">
-    Prepare to be amazed, delighted, and transported to realms beyond imagination. Where every dish is a gateway to new
-    and unforgettable experiences.
+    <div class="subject">
+        Prepare to be amazed, delighted, and transported to realms beyond imagination. Where every dish is a gateway to
+        new
+        and unforgettable experiences.
+    </div>
+
+    <form name="connectForm" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="connectForm">
+        <input type="text" name="name" class="input" [placeholder]="'Name'" />
+        <input type="email" name="email" class="input" required [placeholder]="'Email'" />
+        <textarea name="message" class="textarea" [placeholder]="'Message'"></textarea>
+        <button type="submit">Reserve your journey Today !</button>
+    </form>
 </div>
-
-
-<form name="connectForm" method="POST" data-netlify="true">
-    <input type="hidden" name="form-name" value="connectForm">
-    <input type="text" name="name" class="input" [placeholder]="'Name'" />
-    <input type="email" name="email" class="input" required [placeholder]="'Email'" />
-    <textarea name="message" class="textarea" [placeholder]="'Message'"></textarea>
-    <button type="submit">Reserve your journey Today !</button>
-</form>

@@ -4,6 +4,7 @@ import { ItemComponent } from './components/item/item.component';
 import { StatsComponent } from './components/stats/stats.component';
 import { BOTTOM_ITEM, TOP_ITEM } from './items';
 import { STATS } from './stats';
+import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-about',
@@ -15,6 +16,17 @@ import { STATS } from './stats';
   ],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss',
+  animations: [
+    trigger('slideInOut', [
+      transition(':enter', [
+        style({ transform: 'translateX(100%)', opacity: 0 }),
+        animate('200ms ease-in', style({ transform: 'translateX(0%)', opacity: 1 }))
+      ]),
+      transition(':leave', [
+        animate('200ms ease-in', style({ transform: 'translateX(-100%)', opacity: 0 }))
+      ])
+    ])
+  ],
 })
 export class AboutComponent implements OnInit {
 

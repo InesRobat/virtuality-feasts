@@ -1,8 +1,6 @@
-<div class="main" [@routeAnimations]="getRouteAnimationData()">
-  <router-outlet></router-outlet>
+<div class="main" [@fadeAnimation]="getRouterOutletState(o)">
+  <router-outlet #o="outlet"></router-outlet>
 </div>
-
-<!-- add an overlay on the image -->
 
 <div class="bg">
   <img src="./../assets/images/bg.jpg" alt="bg" draggable="false">

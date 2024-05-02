@@ -1,12 +1,11 @@
-<!-- <div class="about"> -->
-<app-item [element]="topItem" />
+<div class="about" @slideInOut>
+    <app-item [element]="topItem" />
 
-<div class="stats">
-    @for (item of statsArray; track $index) {
-    <app-stats [element]="item" />
-    }
+    <div class="stats">
+        @for (item of statsArray; track $index) {
+        <app-stats [element]="item" />
+        }
+    </div>
+
+    <app-item class="reverse" [element]="bottomItem" />
 </div>
-
-
-<app-item class="reverse" [element]="bottomItem" />
-<!-- </div> -->

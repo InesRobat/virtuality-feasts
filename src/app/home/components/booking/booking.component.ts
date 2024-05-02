@@ -1,3 +1,4 @@
+import { trigger, transition, style, animate } from '@angular/animations';
 import { CommonModule } from '@angular/common';
 import { Component, type OnInit } from '@angular/core';
 import { PanelTitleComponent } from 'src/app/shared/panel-title/panel-title.component';
@@ -11,6 +12,17 @@ import { PanelTitleComponent } from 'src/app/shared/panel-title/panel-title.comp
   ],
   templateUrl: './booking.component.html',
   styleUrl: './booking.component.scss',
+  animations: [
+    trigger('slideInOut', [
+      transition(':enter', [
+        style({ transform: 'translateX(100%)', opacity: 0 }),
+        animate('200ms ease-in', style({ transform: 'translateX(0%)', opacity: 1 }))
+      ]),
+      transition(':leave', [
+        animate('200ms ease-in', style({ transform: 'translateX(-100%)', opacity: 0 }))
+      ])
+    ])
+  ],
 })
 export class BookingComponent implements OnInit {
 
