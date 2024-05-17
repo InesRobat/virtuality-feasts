@@ -16,10 +16,10 @@ import { PanelTitleComponent } from 'src/app/shared/panel-title/panel-title.comp
     trigger('slideInOut', [
       transition(':enter', [
         style({ transform: 'translateX(100%)', opacity: 0 }),
-        animate('200ms ease-in', style({ transform: 'translateX(0%)', opacity: 1 }))
+        animate('.8s ease-in', style({ transform: 'translateX(0%)', opacity: 1 }))
       ]),
       transition(':leave', [
-        animate('200ms ease-in', style({ transform: 'translateX(-100%)', opacity: 0 }))
+        animate('.8s ease-in', style({ transform: 'translateX(-100%)', opacity: 0 }))
       ])
     ])
   ],
